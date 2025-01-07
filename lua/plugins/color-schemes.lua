@@ -1,13 +1,24 @@
 local function setup_lualine(theme)
 	return string.format(
 		[[
-    	require("lualine").setup({
-			extensions = { "neo-tree" },
-			options = {
-				theme = "%s",
-			},
-		})
-	]],
+    	    require("lualine").setup({
+			    extensions = {
+                    {
+	                    sections = {
+		                    lualine_a = {
+			                    function()
+				                    return "File Explorer"
+			                    end,
+		                    },
+	                    },
+	                    filetypes = { "neo-tree" },
+                    }
+                },
+			    options = {
+				    theme = "%s",
+			    },
+		    })
+	    ]],
 		theme
 	)
 end

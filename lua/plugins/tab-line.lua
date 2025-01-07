@@ -26,7 +26,7 @@ return {
 				offsets = {
 					{
 						filetype = "neo-tree",
-						text = "File Explorer", -- Optional: Title text for the offset
+						-- text = "File Explorer", -- Optional: Title text for the offset
 						text_align = "left", -- Text alignment: "left", "center", or "right"
 						-- separator = true, -- Whether to show a separator
 					},
