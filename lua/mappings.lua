@@ -4,16 +4,16 @@ vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>", { desc =
 -- LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Documentation" })
 vim.keymap.set("n", "gD", vim.lsp.buf.definition, { desc = "Go to Definition" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
 
 -- None-ls
-vim.keymap.set("n", "<leader>fo", vim.lsp.buf.format, { desc = "Format File" })
+vim.keymap.set("n", "<leader>fo", vim.lsp.buf.format, { desc = "[Fo]rmat File" })
 
 -- Notifications
-vim.keymap.set("n", "<leader>sn", ":Telescope notify<CR>", { desc = "Show Notifications" })
+vim.keymap.set("n", "<leader>sn", ":Telescope notify<CR>", { desc = "[S]how [N]otifications" })
 
 -- Color Schemes
-vim.keymap.set("n", "<leader>th", ":Themery<CR>", { desc = "Change Theme" })
+vim.keymap.set("n", "<leader>th", ":Themery<CR>", { desc = "Change [Th]eme" })
 
 -- Buffer Line
 vim.api.nvim_set_keymap(
@@ -26,7 +26,7 @@ vim.api.nvim_set_keymap(
 -- Incremental Rename
 vim.keymap.set("n", "<leader>rn", function()
 	return ":IncRename " .. vim.fn.expand("<cword>")
-end, { desc = "Rename Variable", expr = true })
+end, { desc = "[R]ename Variable", expr = true })
 
 function CloseCurrentBufferAndSwitch()
 	-- Save the current buffer number

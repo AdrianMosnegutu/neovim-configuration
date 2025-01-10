@@ -6,11 +6,11 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin")
 
-            vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find File" })
-			vim.keymap.set("n", "<leader>fl", builtin.live_grep, { desc = "Find Line" })
+            vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]ile" })
+			vim.keymap.set("n", "<leader>fl", builtin.live_grep, { desc = "[F]ind [L]ine" })
 			vim.keymap.set("n", "<leader>fr", function()
 				builtin.oldfiles({ only_cwd = true })
-			end, { desc = "Recent Files" })
+			end, { desc = "[R]ecent [F]iles" })
 		end,
 	},
 	{
