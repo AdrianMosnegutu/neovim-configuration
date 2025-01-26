@@ -26,11 +26,26 @@ return {
 			lspconfig.lua_ls.setup({ -- Lua
 				capabilities = capabilities,
 			})
+			lspconfig.matlab_ls.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.clangd.setup({ -- C/C++
 				capabilities = capabilities,
 			})
 			lspconfig.jdtls.setup({ -- Java
 				capabilities = capabilities,
+			})
+			lspconfig.ts_ls.setup({ -- JavaScript / TypeScript
+				capabilities = capabilities,
+			})
+			lspconfig.eslint.setup({
+				on_attach = function(client, bufnr)
+					-- Enable auto-fix on save
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = bufnr,
+						command = "EslintFixAll",
+					})
+				end,
 			})
 
 			-- Customize hover documentation borders
