@@ -4,44 +4,44 @@ vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>", { desc =
 -- LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Documentation" })
 vim.keymap.set("n", "gD", vim.lsp.buf.definition, { desc = "Go to Definition" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
 
 -- None-ls
-vim.keymap.set("n", "<leader>fo", vim.lsp.buf.format, { desc = "[Fo]rmat File" })
+vim.keymap.set("n", "<leader>fo", vim.lsp.buf.format, { desc = "Format File" })
 
 -- Notifications
-vim.keymap.set("n", "<leader>sn", ":Telescope notify<CR>", { desc = "[S]how [N]otifications" })
+vim.keymap.set("n", "<leader>sn", ":Telescope notify<CR>", { desc = "Show Notifications" })
 
 -- Color Schemes
-vim.keymap.set("n", "<leader>th", ":Themery<CR>", { desc = "Change [Th]eme" })
+vim.keymap.set("n", "<leader>th", ":Themery<CR>", { desc = "Change Theme" })
 
 -- Buffer Line
 vim.api.nvim_set_keymap(
-	"n", -- Normal mode
-	"<Tab>", -- Keybind
-	":BufferLineCycleNext<CR>", -- Command to go to the next tab
-	{ noremap = true, silent = true } -- Options: no recursive mapping and silent
+    "n",                           -- Normal mode
+    "<Tab>",                       -- Keybind
+    ":BufferLineCycleNext<CR>",    -- Command to go to the next tab
+    { noremap = true, silent = true } -- Options: no recursive mapping and silent
 )
 
 -- Incremental Rename
 vim.keymap.set("n", "<leader>rn", function()
-	return ":IncRename " .. vim.fn.expand("<cword>")
+    return ":IncRename " .. vim.fn.expand("<cword>")
 end, { desc = "[R]ename Variable", expr = true })
 
 function CloseCurrentBufferAndSwitch()
-	-- Save the current buffer number
-	local current_buf = vim.api.nvim_get_current_buf()
+    -- Save the current buffer number
+    local current_buf = vim.api.nvim_get_current_buf()
 
-	-- Cycle to the next buffer
-	vim.cmd("BufferLineCycleNext")
+    -- Cycle to the next buffer
+    vim.cmd("BufferLineCycleNext")
 
-	-- Close the previously active buffer
-	vim.cmd("bdelete " .. current_buf)
+    -- Close the previously active buffer
+    vim.cmd("bdelete " .. current_buf)
 end
 
 vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>x",
-	":lua CloseCurrentBufferAndSwitch()<CR>",
-	{ desc = "Close Tab", noremap = true, silent = true }
+    "n",
+    "<Leader>x",
+    ":lua CloseCurrentBufferAndSwitch()<CR>",
+    { desc = "Close Tab", noremap = true, silent = true }
 )
