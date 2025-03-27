@@ -23,7 +23,8 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspconfig = require("lspconfig")
 
-            local servers = { "lua_ls", "clangd", "csharp_ls", "jdtls", "cssls", "ts_ls", "tailwindcss" }
+            local servers =
+            { "html", "pyright", "lua_ls", "clangd", "csharp_ls", "jdtls", "cssls", "ts_ls", "tailwindcss" }
 
             for _, lsp in ipairs(servers) do
                 lspconfig[lsp].setup({
