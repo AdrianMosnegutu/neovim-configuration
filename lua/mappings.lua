@@ -35,6 +35,7 @@ vim.keymap.set("n", "<leader>rn", function()
 	return ":IncRename " .. vim.fn.expand("<cword>")
 end, { desc = "Rename Variable", expr = true })
 
+-- Bufferline
 function CloseCurrentBufferAndSwitch()
 	-- Save the current buffer number
 	local current_buf = vim.api.nvim_get_current_buf()

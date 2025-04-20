@@ -14,8 +14,8 @@ return {
             tailwind_opts = { -- Options for highlighting tailwind names
                 update_names = true, -- When using tailwind = 'both', update tailwind names from LSP results.  See tailwind section
             },
-            virtualtext = "●",
-            -- virtualtext = "■",
+            -- virtualtext = "●",
+            virtualtext = "■",
             virtualtext_mode = "foreground",
             virtualtext_inline = true,
             mode = "virtualtext", -- Set the display mode

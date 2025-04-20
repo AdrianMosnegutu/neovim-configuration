@@ -32,15 +32,6 @@ return {
         "onsails/lspkind.nvim",
     },
     {
-        "numToStr/Comment.nvim",
-        opts = {
-            -- add any options here
-        },
-        config = function()
-            require("Comment").setup()
-        end,
-    },
-    {
         "hrsh7th/cmp-nvim-lsp",
     },
     {
@@ -85,10 +76,7 @@ return {
                 },
                 window = {
                     completion = cmp.config.window.bordered(),
-                    documentation = {
-                        border = "rounded", -- or "single", "double", "shadow"
-                        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-                    },
+                    documentation = cmp.config.window.bordered(),
                 },
                 mapping = {
                     ["<Tab>"] = cmp.mapping(function(fallback)
