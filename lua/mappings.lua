@@ -53,3 +53,6 @@ vim.api.nvim_set_keymap(
 	":lua CloseCurrentBufferAndSwitch()<CR>",
 	{ desc = "Close Tab", noremap = true, silent = true }
 )
+
+-- Docscribe
+vim.api.nvim_set_keymap("n", "<Leader>dg", ": DocscribeGenerate<CR>", { desc = "Generate Documentation" })

@@ -33,7 +33,7 @@ return {
                 never_show_by_name = {},
             },
             window = {
-                width = 40,
+                width = 35,
                 options = {
                     cursor_line = false,
                 },
